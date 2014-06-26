@@ -1,0 +1,25 @@
+<div class="conatainer col-md-8">
+
+<table class="table table-bordered ">
+
+<tr >
+<th>Project ID</th>
+  <th>Project Name</th>
+  <th>Description</th>		
+  <th>Collaborators</th>
+  <th>Select</th>
+</tr>
+<tr ng-repeat="pname in projects">
+  <td>{{pname.id}}</td>
+  <td>{{pname.name}}</td>	
+  	<td>{{pname.description}}</td>
+  <td>{{pname.collaborator}}</td>
+  <td><a href="/projectdetails">
+        <input type="radio"  name=que_1 value="1" />
+        <br>
+        </a>
+   </td>
+</tr>
+
+</table>
+</div>
