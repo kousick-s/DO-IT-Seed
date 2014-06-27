@@ -32,20 +32,87 @@ projectcontroller.controller('ProjectDetailCtrl', ['$scope',
 
 projectcontroller.controller('ProjectDetailCtrl', ['$scope', '$routeParams', 'Project',
                                                    function($scope, $routeParams, Project) {
-                                                     $scope.project = [
-                                       	                    	    {
+													
+                                                    var projectdet = [{
                                     	                    	        
-                                    	                    	        'id':"good",
+                                                    					"id":"GOod",
+                                                    					"name":"Success1",
+                                    	                    	        "tasks": [{
+                                    	                    	        	"title":"HU-Assignment",
+                                    	                    	        	"desc":"Carrying Tasks that can train Freshers and convert them into professinal Hashers !!",
+                                    	                    	        	"assignedto":"kousick",
+                                    	                    	        	"createdate":"27/06/2014",
+                                    	                    	        	"duedate":"30/06/2014",
+                                    	                    	        	"completed":"False"},
                                     	                    	        	
-                                    	                    	        "collaborator": "img/phones/motorola-xoom-with-wi-fi.0.jpg", 
-                                    	                    	        
-                                    	                    	        "description": "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb)."
-                                    	                    	        },
-                                    	                    	    
-                                    	                    	
-                                    	                    	    
-                                    	                    	];
-
+                                    	                    	        	{	
+                                    	                    	        	"title":"HU-Assignment",
+                                    	                    	        	"desc":"Carrying Tasks that can train Freshers and convert them into professinal Hashers !!",
+                                    	                    	        	"assignedto":"Saurav",
+                                    	                    	        	"createdate":"27/06/2014",
+                                    	                    	        	"duedate":"30/06/2014",
+                                    	                    	        	"completed":"False"}],
+                                            	                    	    "assigned":[{"name":"Kousick","desig":"dev","img":"./img/kousick.jpg"},{"name":"Saurav","desig":"dev","img":"./img/kousick.jpg"}]
+                                                	                                    },
                                                     
-                                                     
+                                                    {
+                    	                    	        
+                                    					"id":"GOod1",
+                                    					"name":"Success",
+                    	                    	        "tasks": [{
+                    	                    	        	"title":"HU-Assignment",
+                    	                    	        	"desc":"Carrying Tasks that can train Freshers and convert them into professinal Hashers !!",
+                    	                    	        	"assignedto":"kousick",
+                    	                    	        	"createdate":"27/06/2014",
+                    	                    	        	"duedate":"30/06/2014",
+                    	                    	        	"completed":"False"},
+                    	                    	        	
+                    	                    	        {	
+                    	                    	        	"title":"HU-Assignment",
+                    	                    	        	"desc":"Carrying Tasks that can train Freshers and convert them into professinal Hashers !!",
+                    	                    	        	"assignedto":"Saurav",
+                    	                    	        	"createdate":"27/06/2014",
+                    	                    	        	"duedate":"30/06/2014",
+                    	                    	        	"completed":"False"}],
+                            	                    	    "assigned":[{"name":"Kousick","desig":"dev","img":"./img/kousick.jpg"},{"name":"Saurav","desig":"dev","img":"./img/kousick.jpg"}]
+                                	                                    },
+                    	                    	        {
+                        	                    	        
+                                        					"id":"GOod1",
+                                        					"name":"Success1",
+                        	                    	        "tasks": [{
+                        	                    	        	"title":"HU-Assignment",
+                        	                    	        	"desc":"Carrying Tasks that can train Freshers and convert them into professinal Hashers !!",
+                        	                    	        	"assignedto":"kousick",
+                        	                    	        	"createdate":"27/06/2014",
+                        	                    	        	"duedate":"30/06/2014",
+                        	                    	        	"completed":"False"},
+                        	                    	        	
+                        	                    	        	{	
+                        	                    	        	"title":"HU-Assignment",
+                        	                    	        	"desc":"Carrying Tasks that can train Freshers and convert them into professinal Hashers !!",
+                        	                    	        	"assignedto":"Saurav",
+                        	                    	        	"createdate":"27/06/2014",
+                        	                    	        	"duedate":"30/06/2014",
+                        	                    	        	"completed":"False"}],
+                    	                    	    "assigned":[{"name":"Kousick","desig":"dev","img":"./img/kousick.jpg"},{"name":"Saurav","desig":"dev","img":"./img/kousick.jpg"}]
+                        	                                    },
+                    	                    	        
+                                                    
+                                                    					];
+                                                    
+                                                    var json=[];
+                                                    var assignedvar=[];
+                                                    for(var i=0;i<projectdet.length;i++)
+                                                    	{
+                                                    	var id=projectdet[i].id;
+                                                    	if(id===$routeParams.id)
+                                                    		{
+                                                    		json.push(projectdet[i]);
+                                                    	 assignedvar.push(projectdet[i].assigned);
+                                                    		}
+                                                    	}
+                                                   
+                                                    $scope.assigned=assignedvar;                                                  
+                                                    $scope.projectdets=json;
                                                    }]);

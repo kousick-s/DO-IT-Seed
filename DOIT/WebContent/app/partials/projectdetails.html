@@ -1,3 +1,32 @@
-<div >
+<div>
 Project Details
+<div class="container col-md-4">
+		
+		<div ng-repeat="obj in assigned">
+		
+		<!-- <div> <img src="{{obj.img}}"/></div> -->
+		<div><h4>{{obj.name}}</h4></div>
+		<div><h4>{{obj.desig}}</h4></div>
+		
+		</div>
+</div>
+<div class="container col-md-4">
+	<table class="table table-bordered ">
+
+	<tr >
+		<th>Project ID</th>
+  		<th>Project Name</th>
+  		<th>Description</th>		
+  		<th>Collaborators</th>
+  		<th>Select</th>
+	</tr>
+	<tr ng-repeat="pname in projectdets">
+  		<td>{{pname.id}}</td>
+  		<td>{{pname.collaborator}}</td>	
+  		<td>{{pname.description}}</td>
+  
+	</tr>
+
+	</table>
+</div>
 </div>
