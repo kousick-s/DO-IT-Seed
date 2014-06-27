@@ -51,31 +51,13 @@ projectcontroller.controller('ProjectDetailCtrl', ['$scope', '$routeParams', 'Pr
                                     	                    	        	"assignedto":"Saurav",
                                     	                    	        	"createdate":"27/06/2014",
                                     	                    	        	"duedate":"30/06/2014",
-                                    	                    	        	"completed":"False"}],
+                                    	                    	        	"completed":"True"}],
                                             	                    	    "assigned":[{"name":"Kousick","desig":"dev","img":"./img/kousick.jpg"},{"name":"Saurav","desig":"dev","img":"./img/kousick.jpg"}]
                                                 	                                    },
                                                     
-                                                    {
+                                                    
                     	                    	        
-                                    					"id":"GOod1",
-                                    					"name":"Success",
-                    	                    	        "tasks": [{
-                    	                    	        	"title":"HU-Assignment",
-                    	                    	        	"desc":"Carrying Tasks that can train Freshers and convert them into professinal Hashers !!",
-                    	                    	        	"assignedto":"kousick",
-                    	                    	        	"createdate":"27/06/2014",
-                    	                    	        	"duedate":"30/06/2014",
-                    	                    	        	"completed":"False"},
-                    	                    	        	
-                    	                    	        {	
-                    	                    	        	"title":"HU-Assignment",
-                    	                    	        	"desc":"Carrying Tasks that can train Freshers and convert them into professinal Hashers !!",
-                    	                    	        	"assignedto":"Saurav",
-                    	                    	        	"createdate":"27/06/2014",
-                    	                    	        	"duedate":"30/06/2014",
-                    	                    	        	"completed":"False"}],
-                            	                    	    "assigned":[{"name":"Kousick","desig":"dev","img":"./img/kousick.jpg"},{"name":"Saurav","desig":"dev","img":"./img/kousick.jpg"}]
-                                	                                    },
+                                    					
                     	                    	        {
                         	                    	        
                                         					"id":"GOod1",
@@ -109,7 +91,7 @@ projectcontroller.controller('ProjectDetailCtrl', ['$scope', '$routeParams', 'Pr
                                                     	if(id===$routeParams.id)
                                                     		{
                                                     		json.push(projectdet[i]);
-                                                    	 assignedvar.push(projectdet[i].assigned);
+                                                    	 assignedvar = projectdet[i].assigned;
                                                     		}
                                                     	}
                                                    
