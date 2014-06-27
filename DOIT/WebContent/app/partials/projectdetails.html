@@ -1,7 +1,4 @@
 <div>
-<div class="container row">
-<h3>Project Details</h3>
-</div>
 <div class="container col-md-2">
 		<div style="border-style: solid;
     border-width: 2px;" >
@@ -46,15 +43,23 @@
 		
 		<div class="col-md-4">
 			<h2>More..</h2>
+			<div ng-if="tk.completed!=='True'">
+			<div>
+    				<span> <a href="#">Edit</a></span>
+    				</div>
+    				<div>
+    				<span> <a href="#">Complete</a></span>
+    				</div>
+    			</div>
 			<div>
 		<span>	Assigned To:{{tk.assignedto}}</span>
 		</div>
 		<div>
 		<span>		Created Date:{{tk.createdate}} </span>
-		<div>
+		</div>
 		<div>
 		<span>		To Date:{{tk.duedate}} </span>
-		<div>
+		
 			   
 			</div>
 
