@@ -14,10 +14,10 @@ config(['$routeProvider', '$locationProvider', function($routeProvider, $locatio
  // $locationProvider.html5Mode(true);
   $routeProvider
   .when('/view1', {templateUrl: 'partials/projectlist.html', controller: 'ProjectListCtrl'})
-  .when('/projectdetails', {templateUrl: 'partials/projectdetails.html', controller: 'ProjectDetailCtrl'})
-  //.otherwise({
-   //   redirectTo: '/view1'
-   // });
+  .when('/projectdetails/:id', {templateUrl: 'partials/projectdetails.html', controller: 'ProjectDetailCtrl'})
+  .otherwise({
+      redirectTo: '/view1'
+    });
   
 }]);
 

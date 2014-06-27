@@ -10,14 +10,14 @@ projectcontroller.controller('ProjectListCtrl', ['$scope',
 	                    	    {
 	                    	        "name": "Success", 
 	                    	        "id": "GOod",
-	                    	        "collaborator": "img/phones/motorola-xoom-with-wi-fi.0.jpg", 
+	                    	        "collaborator": [{"cname":"Saurav"},{"cname":"Kousick"}],
 	                    	        
 	                    	        "description": "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb)."
 	                    	    }, 
 	                    	{
 	                    	        "name": "Success1", 
 	                    	        "id": "GOod1",
-	                    	        "collaborator": "img/phones/motorola-xoom-with-wi-fi.0.jpg", 
+	                    	        "collaborator": [{"cname":"Saurav"},{"cname":"Kousick"}], 
 	                    	        
 	                    	        "description": "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb)."
 	                    	    }
@@ -29,3 +29,23 @@ projectcontroller.controller('ProjectDetailCtrl', ['$scope',
                                                  function($scope) {
                                                	
                                                  }]);
+
+projectcontroller.controller('ProjectDetailCtrl', ['$scope', '$routeParams', 'Project',
+                                                   function($scope, $routeParams, Project) {
+                                                     $scope.project = [
+                                       	                    	    {
+                                    	                    	        
+                                    	                    	        'id':"good",
+                                    	                    	        	
+                                    	                    	        "collaborator": "img/phones/motorola-xoom-with-wi-fi.0.jpg", 
+                                    	                    	        
+                                    	                    	        "description": "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb)."
+                                    	                    	        },
+                                    	                    	    
+                                    	                    	
+                                    	                    	    
+                                    	                    	];
+
+                                                    
+                                                     
+                                                   }]);

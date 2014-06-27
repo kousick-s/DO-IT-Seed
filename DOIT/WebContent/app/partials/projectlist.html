@@ -1,5 +1,5 @@
 <div class="conatainer col-md-8">
-
+Coming
 <table class="table table-bordered ">
 
 <tr >
@@ -13,8 +13,8 @@
   <td>{{pname.id}}</td>
   <td>{{pname.name}}</td>	
   	<td>{{pname.description}}</td>
-  <td>{{pname.collaborator}}</td>
-  <td><a href="/projectdetails">
+  <td><span ng-repeat="colname in pname.collaborator">,{{colname.cname}}</span></td>
+  <td><a href="/#/projectdetails/{{pname.id}}">
         <input type="radio"  name=que_1 value="1" />
         <br>
         </a>
