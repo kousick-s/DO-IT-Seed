@@ -8,7 +8,7 @@ projectcontroller.controller('ProjectListCtrl', function($scope,
 		ProjectsService) {
 	$scope.projects = ProjectsService.list();
 	$scope.SaveNew = function(){
-		var sendjson={name:$scope.newProject.name};
+		var sendjson={name:$scope.newProject.name,description:$scope.newProject.description,"collaborator": [{"cname":$scope.newProject.collaborator}]};
 		ProjectsService.save(sendjson);
 	};
 });

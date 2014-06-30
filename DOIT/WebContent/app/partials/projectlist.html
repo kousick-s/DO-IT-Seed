@@ -1,13 +1,15 @@
-<div class="conatainer col-md-8">
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="conatainer col-md-8">
 
 
-<div ng-controller="ModalDemoCtrl">
-    <script type="text/ng-template" id="myModalContent.html">
+		<div ng-controller="ModalDemoCtrl">
+			<script type="text/ng-template" id="myModalContent.html">
         <div class="modal-header">
-            <h3 class="modal-title">I'm a modal!</h3>
+            <h3 class="modal-title">Add New Project</h3>
         </div>
         <div class="modal-body">
-            <form class="form-horizontal" name="commentform" method="post" action="send_form_email.php">
+            <form class="form-horizontal" name="AddProjectForm">
 							    
 							    
 							    <div class="form-group">
@@ -22,59 +24,63 @@
 							    </div>
 							    
 							    
-							    <div class="form-group">
-							        <label id="lbl" class="col-md-4 modal-lbl" for="description">Description</label>
-							        <div class="col-md-6 ">
-							       <!-- <div class="col-md-6 modal-lblinput-group"> -->
-							     <!--   <span class="input-group-addon">@</span> -->
-							            <input type="text" class="form-control" id="description" ng-model="newProject.description" name="description" placeholder="Description"/>
-							        </div>
-							        <div id="emailtick" class="col-md-2 modal-tick">
-							            
-							        </div>
-							    </div>
-							    <div class="form-group">
-							        <label id="lbl" class="col-md-4 modal-lbl" for="collaborators">Collaborators</label>
-							        <div class="col-md-6">
-							            <input type="text" class="form-control" id="collaborators" ng-model="newProject.collaborator.cname" name="collaborators" placeholder="Contact Number"/>
-							        </div>
-							        <div id="contactick" class="col-md-2 modal-tick">
-							            
-							        </div>
-							    </div>
-							</form>
-        <div class="modal-footer" ng-controller="ProjectListCtrl">
-            <button class="btn btn-primary" ng-click="SaveNew()">Submit</button>
-            
-        </div>
-<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-    </script>
+							    
+			
+			
+			<div class="form-group">
+				<label id="lbl" class="col-md-4 modal-lbl" for="description">Description</label>
+				<div class="col-md-6 ">
+					<!-- <div class="col-md-6 modal-lblinput-group"> -->
+					<!--   <span class="input-group-addon">@</span> -->
+					<input type="text" class="form-control" id="description"
+						ng-model="newProject.description" name="description"
+						placeholder="Description" />
+				</div>
+				<div id="emailtick" class="col-md-2 modal-tick"></div>
+			</div>
+			<div class="form-group">
+				<label id="lbl" class="col-md-4 modal-lbl" for="collaborators">Collaborators</label>
+				<div class="col-md-6">
+					<input type="text" class="form-control" id="collaborators"
+						ng-model="newProject.collaborator" name="collaborators"
+						placeholder="Contact Number" />
+				</div>
+				<div id="contactick" class="col-md-2 modal-tick"></div>
+			</div>
+			</form>
+			<div class="modal-footer" ng-controller="ProjectListCtrl">
+				<button class="btn btn-primary" ng-click="SaveNew()">Submit</button>
 
-    <button class="btn btn-default" ng-click="open()">Create Project</button>
-   
-   <!--   <div ng-show="selected">Selection from a modal: {{ selected }} </div>  -->
-</div>
+			</div>
+			<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+			</script>
 
-<table class="table table-bordered ">
+			<button class="btn btn-primary" ng-click="open()">Create
+				Project</button>
 
-<tr >
-<th>Project ID</th>
-  <th>Project Name</th>
-  <th>Description</th>		
-  <th>Collaborators</th>
-  <th>Select</th>
-</tr>
-<tr ng-repeat="pname in projects">
-  <td>{{pname.id}}</td>
-  <td>{{pname.name}}</td>	
-  	<td>{{pname.description}}</td>
-  <td><span ng-repeat="colname in pname.collaborator">,{{colname.cname}}</span></td>
-  <td><a href="/#/projectdetails/{{pname.id}}">
-        <input type="radio"  name=que_1 value="1" />
-        <br>
-        </a>
-   </td>
-</tr>
+			<!--   <div ng-show="selected">Selection from a modal: {{ selected }} </div>  -->
+		</div>
 
-</table>
+		<table class="table table-bordered ">
+
+			<tr>
+				<th>Project ID</th>
+				<th>Project Name</th>
+				<th>Description</th>
+				<th>Collaborators</th>
+				<th>Select</th>
+			</tr>
+			<tr ng-repeat="pname in projects">
+				<td>{{pname.id}}</td>
+				<td>{{pname.name}}</td>
+				<td>{{pname.description}}</td>
+				<td><span ng-repeat="colname in pname.assigned">,{{colname.name}}</span></td>
+				<td><a href="/#/projectdetails/{{pname.id}}"> <input
+						type="radio" name=que_1 value="1" /> <br>
+				</a></td>
+			</tr>
+
+		</table>
+	</div>
+	<div class="col-md-2"></div>
 </div>

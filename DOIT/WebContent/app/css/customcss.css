@@ -1,0 +1,22 @@
+.pd-header{
+	padding-left: 40px;
+}
+.tx-border{
+	padding-top:10px;
+	border-bottom: solid;
+	border-color:#3375AE;
+}
+.img-border{
+	padding-left:25px;
+	padding-bottom:25px;
+	padding-top:20px;
+}
+.filter-buttons{
+	border-bottom: solid;
+	border-color:#3375AE;
+	
+	padding-bottom:10px;
+}
+.each-task{
+	padding-top:5px;
+}
