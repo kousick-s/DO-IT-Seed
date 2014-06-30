@@ -13,7 +13,7 @@ module.service('ProjectsService',
         
 		"id":"123",
 		"name":"Success1",
-		"collaborator": [{"cname":"Saurav"},{"cname":"Kousick"}],
+		"collaborator": [{"name":"Kousick","desig":"dev","img":"./img/kousick.jpg"},{"name":"Saurav","desig":"dev","img":"./img/kousick.jpg"}],
         
         "description": "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb).",
         "tasks": [{
@@ -42,7 +42,7 @@ module.service('ProjectsService',
 {
 
 "id":"1234",
-"collaborator": [{"cname":"Saurav"},{"cname":"Kousick"}],
+"collaborator": [{"name":"Kousick","desig":"dev","img":"./img/kousick.jpg"},{"name":"Saurav","desig":"dev","img":"./img/kousick.jpg"}],
 
 "description": "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb).",
 "name":"Success1",

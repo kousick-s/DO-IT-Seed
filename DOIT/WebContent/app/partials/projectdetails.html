@@ -98,6 +98,7 @@
 										<div class="col-md-6 ">
 											<textarea rows="4" cols="40" ng-model="newTask.desc"></textarea>
 									</div>
+									</div>
 							</div>
 					</div>
 			</form>
@@ -148,10 +149,29 @@
 												placeholder="Contact Number" />
 									</div>
 							<div id="contactick" class="col-md-2 modal-tick"></div>
+								<div class="form-group">
+								<label id="lbl" class="col-md-4 modal-lbl" for="desig">Designation</label>
+									<div class="col-md-6">
+										<input type="text" class="form-control" id="desig"
+											ng-model="newCollaborator.desig" name="gdesi"
+												placeholder="Designation" />
+									</div>
+
+							</div>
+							
+								<div class="form-group">
+								<label id="lbl" class="col-md-4 modal-lbl" for="img">Image Url</label>
+									<div class="col-md-6">
+										<input type="file" class="form-control" id="img"
+											ng-model="newCollaborator.imgurl" name="imgurl"
+												placeholder="Image URL" />
+									</div>
+							</div>
+							
 					</div>
 			</form>
 			<div class="modal-footer" ng-controller="ProjectDetailCtrl">
-				<button class="btn btn-primary" ng-click="SaveNew()">Submit</button>
+				<button class="btn btn-primary" ng-click="SaveNewColl()">Submit</button>
 
 			</div>
 			<button class="btn btn-warning" ng-click="cancel()">Cancel</button>

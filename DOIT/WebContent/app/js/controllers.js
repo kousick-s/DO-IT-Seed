@@ -24,7 +24,7 @@ projectcontroller.controller('ProjectDetailCtrl', [ '$scope', '$routeParams',
 				var id = projectdet[i].id;
 				if (id === $routeParams.id) {
 					json.push(projectdet[i]);
-					assignedvar = projectdet[i].assigned;
+					assignedvar = projectdet[i].collaborator;
 				}
 			}
 
@@ -40,6 +40,18 @@ projectcontroller.controller('ProjectDetailCtrl', [ '$scope', '$routeParams',
 					var id = projectdet[i].id;
 					if (id === $routeParams.id) {
 						projectdet[i].tasks.push(newtask);
+					}
+				}
+			};
+			$scope.SaveNewColl = function(){
+				var newcoll={"name":$scope.newCollaborator.name,"desig":$scope.newCollaborator.desig,"img":$scope.newCollaborator.imgurl};
+				//ProjectsService.savetask($routeParams.id,newtask);
+				
+				for (var i = 0; i < projectdet.length; i++) {
+					
+					var id = projectdet[i].id;
+					if (id === $routeParams.id) {
+						projectdet[i].collaborator.push(newcoll);
 					}
 				}
 			};
