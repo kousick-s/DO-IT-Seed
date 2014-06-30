@@ -9,14 +9,14 @@ projectcontroller.controller('ProjectListCtrl', ['$scope',
 	$scope.projects = [
 	                    	    {
 	                    	        "name": "Success", 
-	                    	        "id": "GOod",
+	                    	        "id": "123",
 	                    	        "collaborator": [{"cname":"Saurav"},{"cname":"Kousick"}],
 	                    	        
 	                    	        "description": "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb)."
 	                    	    }, 
 	                    	{
 	                    	        "name": "Success1", 
-	                    	        "id": "GOod1",
+	                    	        "id": "1234",
 	                    	        "collaborator": [{"cname":"Saurav"},{"cname":"Kousick"}], 
 	                    	        
 	                    	        "description": "The Next, Next Generation\r\n\r\nExperience the future with Motorola XOOM with Wi-Fi, the world's first tablet powered by Android 3.0 (Honeycomb)."
@@ -35,7 +35,7 @@ projectcontroller.controller('ProjectDetailCtrl', ['$scope', '$routeParams', 'Pr
 													
                                                     var projectdet = [{
                                     	                    	        
-                                                    					"id":"GOod",
+                                                    					"id":"123",
                                                     					"name":"Success1",
                                     	                    	        "tasks": [{
                                     	                    	        	"title":"HU-Assignment",
@@ -43,7 +43,8 @@ projectcontroller.controller('ProjectDetailCtrl', ['$scope', '$routeParams', 'Pr
                                     	                    	        	"assignedto":"kousick",
                                     	                    	        	"createdate":"27/06/2014",
                                     	                    	        	"duedate":"30/06/2014",
-                                    	                    	        	"completed":"False"},
+                                    	                    	        	"completed":"False",
+                                    	                    	        	"priority":"high"},
                                     	                    	        	
                                     	                    	        	{	
                                     	                    	        	"title":"HU-Assignment",
@@ -51,7 +52,8 @@ projectcontroller.controller('ProjectDetailCtrl', ['$scope', '$routeParams', 'Pr
                                     	                    	        	"assignedto":"Saurav",
                                     	                    	        	"createdate":"27/06/2014",
                                     	                    	        	"duedate":"30/06/2014",
-                                    	                    	        	"completed":"True"}],
+                                    	                    	        	"completed":"True",
+                                    	                    	        	"priority":"low"}],
                                             	                    	    "assigned":[{"name":"Kousick","desig":"dev","img":"./img/kousick.jpg"},{"name":"Saurav","desig":"dev","img":"./img/kousick.jpg"}]
                                                 	                                    },
                                                     
@@ -60,7 +62,7 @@ projectcontroller.controller('ProjectDetailCtrl', ['$scope', '$routeParams', 'Pr
                                     					
                     	                    	        {
                         	                    	        
-                                        					"id":"GOod1",
+                                        					"id":"1234",
                                         					"name":"Success1",
                         	                    	        "tasks": [{
                         	                    	        	"title":"HU-Assignment",
@@ -68,7 +70,8 @@ projectcontroller.controller('ProjectDetailCtrl', ['$scope', '$routeParams', 'Pr
                         	                    	        	"assignedto":"kousick",
                         	                    	        	"createdate":"27/06/2014",
                         	                    	        	"duedate":"30/06/2014",
-                        	                    	        	"completed":"False"},
+                        	                    	        	"completed":"False",
+                        	                    	        	"priority":"showstopper"},
                         	                    	        	
                         	                    	        	{	
                         	                    	        	"title":"HU-Assignment",
@@ -76,7 +79,8 @@ projectcontroller.controller('ProjectDetailCtrl', ['$scope', '$routeParams', 'Pr
                         	                    	        	"assignedto":"Saurav",
                         	                    	        	"createdate":"27/06/2014",
                         	                    	        	"duedate":"30/06/2014",
-                        	                    	        	"completed":"False"}],
+                        	                    	        	"completed":"False",
+                        	                    	        	"priority":"high"}],
                     	                    	    "assigned":[{"name":"Kousick","desig":"dev","img":"./img/kousick.jpg"},{"name":"Saurav","desig":"dev","img":"./img/kousick.jpg"}]
                         	                                    },
                     	                    	        
@@ -98,3 +102,44 @@ projectcontroller.controller('ProjectDetailCtrl', ['$scope', '$routeParams', 'Pr
                                                     $scope.assigned=assignedvar;                                                  
                                                     $scope.projectdets=json;
                                                    }]);
+
+var ModalDemoCtrl = function ($scope, $modal, $log) {
+
+	  $scope.items = ['item1', 'item2', 'item3'];
+
+	  $scope.open = function (size) {
+
+	    var modalInstance = $modal.open({
+	      templateUrl: 'myModalContent.html',
+	      controller: ModalInstanceCtrl,
+	      size: size,
+	      resolve: {
+	        items: function () {
+	          return $scope.items;
+	        }
+	      }
+	    });
+
+	    modalInstance.result.then(function (selectedItem) {
+	      $scope.selected = selectedItem;
+	    }, function () {
+	      $log.info('Modal dismissed at: ' + new Date());
+	    });
+	  };
+	};
+	
+	var ModalInstanceCtrl = function ($scope, $modalInstance, items) {
+
+		  $scope.items = items;
+		  $scope.selected = {
+		    item: $scope.items[0]
+		  };
+
+		  $scope.ok = function () {
+		    $modalInstance.close($scope.selected.item);
+		  };
+
+		  $scope.cancel = function () {
+		    $modalInstance.dismiss('cancel');
+		  };
+		};
