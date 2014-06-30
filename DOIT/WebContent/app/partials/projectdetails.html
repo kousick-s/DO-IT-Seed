@@ -23,25 +23,145 @@
 	<div class="container col-md-10">
 
 		<div class="row tx-border">
-			<div class="col-md-4"><h3 class="pd-header">Status</h3></div>
+			<div class="col-md-4">
+				<h3 class="pd-header">Status</h3>
+			</div>
 			<div class="col-md-4">
 				<h3 class="pd-header">DETAILS</h3>
 			</div>
-			<div class="col-md-4"><h3 class="pd-header">More..</h3></div>
+			<div class="col-md-4">
+				<h3 class="pd-header">More..</h3>
+			</div>
 		</div>
 		<div ng-repeat="project in projectdets" class="tx-border">
 			<div class="row filter-buttons">
 				<div class="col-md-4">
-				
-				
-				
-					<div class="btn-group">
-						<button type="button" 
-							class="btn btn-primary">Add Task</button>
-						<button type="button" 
-							class="btn btn-primary">Add Collaborator </button>
-						
+				<div class="row">
+					<div ng-controller="ModalDemoCtrl1" class="md-col-4">
+						<script type="text/ng-template" id="myModalContent1.html">
+        					<div class="modal-header">
+            					<h3 class="modal-title">Add New Project</h3>
+        					</div>
+        					<div class="modal-body">
+            					<form class="form-horizontal" name="AddProjectForm">
+							    
+							    
+							    		<div class="form-group">
+							        		<label id="lbl" class=" col-md-4 modal-lbl" for="task_name" >Task Name</label>
+							    
+							        			<div class="col-md-6">
+							            			<input type="text" class="form-control" id="task_name" name="task_name" ng-model="newTask.title" placeholder="Task Name"/>
+							        			</div>
+							        			<div id="first_nametick" class="col-md-2 modal-tick">
+							            
+							        			</div>
+							    		</div>
+							   		<div class="form-group">
+										<label id="lbl" class="col-md-4 modal-lbl" for="priority">Priority</label>
+										<div class="col-md-6 ">
+											<select ng-model="newTask.priority">
+  												<option value="Show Stopper">Showstopper</option>
+  												<option value="saab">High</option>
+  												<option value="mercedes">Medium</option>
+  												<option value="audi">Low</option>
+										  	</select>
+									</div>
+
+									<div id="emailtick" class="col-md-2 modal-tick"></div>
+							</div>
+							<div class="form-group">
+								<label id="lbl" class="col-md-4 modal-lbl" for="duedate">Due Date</label>
+									<div class="col-md-6">
+										<input type="date" id="ddate" ng-model="newTask.duedate" />
+									</div>
+							<div id="contactick" class="col-md-2 modal-tick"></div>
+							<div class="form-group">
+										<label id="lbl" class="col-md-4 modal-lbl" for="status">Status</label>
+										<div class="col-md-6 ">
+											<select ng-model="newTask.status">
+  												<option value="Pending">Pending</option>
+  												
+										  	</select>
+									</div>
+							</div>
+									<div class="form-group">
+										<label id="lbl" class="col-md-4 modal-lbl" for="assigned">Assigned To</label>
+										<div class="col-md-6 ">
+											<select ng-model="newTask.assigned">
+  												<option value="Ralph">Ralph</option>
+  												
+										  	</select>
+									</div>
+									</div>
+									<div class="form-group">
+										<label id="lbl" class="col-md-4 modal-lbl" for="descriptioin">Description</label>
+										<div class="col-md-6 ">
+											<textarea rows="4" cols="40" ng-model="newTask.desc"></textarea>
+									</div>
+							</div>
 					</div>
+			</form>
+			<div class="modal-footer" ng-controller="ProjectDetailCtrl">
+				<button class="btn btn-primary" ng-click="SaveNewTask()">Submit</button>
+
+			</div>
+			<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+			</script>
+			<button type="button" class="btn btn-primary" ng-click="open()">AddTask</button>
+			<!--   <div ng-show="selected">Selection from a modal: {{ selected }} </div>  -->
+			</div>
+			<div ng-controller="ModalDemoCtrl2" class="md-col-4">
+						<script type="text/ng-template" id="myModalContent2.html">
+        					<div class="modal-header">
+            					<h3 class="modal-title">Add Collaborator</h3>
+        					</div>
+        					<div class="modal-body">
+            					<form class="form-horizontal" name="AddCollaborator">
+							    
+							    
+							    		<div class="form-group">
+							        		<label id="lbl" class=" col-md-4 modal-lbl" for="col_name" >Collaborator Name</label>
+							    
+							        			<div class="col-md-6">
+							            			<input type="text" class="form-control" id="col_name" name="col_name" ng-model="newCollaborator.name" placeholder="Collaborator Name"/>
+							        			</div>
+							        			<div id="first_nametick" class="col-md-2 modal-tick">
+							            
+							        			</div>
+							    		</div>
+							   		<div class="form-group">
+										<label id="lbl" class="col-md-4 modal-lbl" for="email">E-mail</label>
+										<div class="col-md-6 ">
+										<!-- <div class="col-md-6 modal-lblinput-group"> -->
+										<!--   <span class="input-group-addon">@</span> -->
+										<input type="text" class="form-control" id="email"
+											ng-model="newCollaborator.email" name="email"
+												placeholder="Email" />
+									</div>
+									<div id="emailtick" class="col-md-2 modal-tick"></div>
+							</div>
+							<div class="form-group">
+								<label id="lbl" class="col-md-4 modal-lbl" for="contac">Contact</label>
+									<div class="col-md-6">
+										<input type="text" class="form-control" id="contac"
+											ng-model="newCollaborator.contact" name="contac"
+												placeholder="Contact Number" />
+									</div>
+							<div id="contactick" class="col-md-2 modal-tick"></div>
+					</div>
+			</form>
+			<div class="modal-footer" ng-controller="ProjectDetailCtrl">
+				<button class="btn btn-primary" ng-click="SaveNew()">Submit</button>
+
+			</div>
+			<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+			</script>
+			<button type="button" class="btn btn-primary" ng-click="open()">AddCollaborator</button>
+			<!--   <div ng-show="selected">Selection from a modal: {{ selected }} </div>  -->
+			</div>
+</div>
+
+
 				</div>
 				<div class="col-md-4">
 					<div class="btn-group">
@@ -54,12 +174,13 @@
 					</div>
 				</div>
 				<div class="col-md-4">
-				Due Date:<input type="date" id="ddate" ng-model="myDate"/>
-				
+					Due Date:<input type="date" id="ddate" ng-model="myDate" />
+
 				</div>
 			</div>
-			
-			<div class="row each-task"  ng-repeat="tk in project.tasks | filter:myFilter | filter:{duedate:myDate}">
+
+			<div class="row each-task"
+				ng-repeat="tk in project.tasks | filter:myFilter | filter:{duedate:myDate}">
 				<div class="col-md-2">
 
 
@@ -96,8 +217,7 @@
 						<div class="btn-group">
 							<button type="button" class="btn btn-primary">Edit</button>
 
-							<button type="button" 
-								class="btn btn-primary">Complete</button>
+							<button type="button" class="btn btn-primary">Complete</button>
 
 						</div>
 					</div>

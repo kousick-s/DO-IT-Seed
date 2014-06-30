@@ -82,6 +82,19 @@ module.service('ProjectsService',
 		
 	};
 	
+	this.savetask=function(paramid,newtask){
+		var json2 = [];
+		for (var i = 0; i < projectdet.length; i++) {
+			var id = projectdet[i].id;
+			if (id === paramid) {
+				//json2.push(projectdet[i]);
+				projectdet[i].tasks.push(newtask);
+			}
+		}
+	};
+	
+	
+	
 	
 	
 });
